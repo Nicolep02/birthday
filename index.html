@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>birthday &lt;3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Top title bar -->
+    <div class="title-bar">
+      <span>Birthday Birthday YaY!</span>
+
+      <div class="window-buttons">
+        <div class="heart-btn">♥</div>
+        <div class="heart-btn">♥</div>
+        <div class="heart-btn">♥</div>
+      </div>
+    </div>
+
+    <!-- START SCREEN -->
+    <section class="screen" id="start-screen">
+      <img src="" alt="girl" class="main-gif" id="girl-gif" />
+      <p>In the land miles away ... lives a cute guy named Rich, ready to explore the birthday quest 📜 </p>
+      <button class="pixel-btn" id="start-btn">start</button>
+    </section>
+
+    <!-- CAT SCREEN -->
+    <section class="screen hidden" id="cat-screen">
+        <div class="speech-bubble top">meow!</div>
+        <img src="" alt="cat" class="main-gif cat-gif" id="cat-gif" />
+        <p class="subtext">A mysterious birthday guide reveals to have lend a helping paw.</p>
+        <button class="pixel-btn hidden" id="cat-next-btn">next</button>
+    </section>
+
+    <!-- PICK SCREEN -->
+    <section class="screen hidden" id="pick-screen">
+      <h2>You decide your fortune</h2>
+      <p class="subtext">Choose wisely . . . things are not as they seem to be. Or are they (￣y▽￣)╭ Ohohoho..... </p>
+
+      <div class="pick-label">pick one</div>
+
+      <div class="choices">
+        <button class="choice" data-choice="strawberry">
+          <img src="" alt="strawberry" class="choice-gif" id="choice-strawberry" />
+          <span>Berry</span>
+        </button>
+
+        <button class="choice" data-choice="blue">
+          <img src="" alt="blue" class="choice-gif" id="choice-blue" />
+          <span>Blue</span>
+        </button>
+
+        <button class="choice" data-choice="pooshy">
+          <img src="" alt="pooshy" class="choice-gif" id="choice-pooshy" />
+          <span>Poo</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ENDING SCREEN -->
+    <section class="screen hidden" id="ending-screen">
+        <img src="" alt="ending" class="main-gif" id="ending-gif" />
+        <h2 id="ending-title">ending title</h2>
+        <p id="ending-text">ending text</p>
+
+        <div id="floating-container"></div>
+
+        <div class="ending-buttons">
+            <button class="pixel-btn" id="choose-again-btn">choose again</button>
+            <button class="pixel-btn" id="replay-btn">restart</button>
+        </div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

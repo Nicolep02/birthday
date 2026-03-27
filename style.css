@@ -1,0 +1,380 @@
+/* =========================
+   COLOR PALETTE
+   ========================= */
+:root {
+  --bg: #000000;
+  --panel: #0b0b0c;
+  --panel-soft: #121214;
+
+  --text: #f5efe6;
+  --text-dim: #b8b2a9;
+  --soft-cream: #e8ddd2;
+  --accent: #d4a373;     /* warm gold */
+  --accent-soft: #e6c4a8;
+  --accent-light: #f0cfb0;
+
+  --border: #1e1e20;
+}
+
+/* =========================
+   RESET
+   ========================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #000; /* pitch black */
+
+  font-family: "Courier New", monospace;
+  cursor: url("assets/images/pawtest.png"), auto;
+}
+
+/* =========================
+   APP WINDOW
+   ========================= */
+#app {
+  width: min(95vw, 520px);
+  height: min(92vh, 760px);
+
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   TITLE BAR
+   ========================= */
+.title-bar {
+  height: 48px;
+  background: #090909;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 14px;
+  color: var(--soft-cream);
+  font-size: 14px;
+  letter-spacing: 0.4px;
+}
+
+.title-bar span {
+    color: white;
+}
+.window-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.heart-btn {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffb6c1;
+  font-size: 14px;
+  line-height: 1;
+  user-select: none;
+}
+
+/* =========================
+   GENERIC SCREEN
+   ========================= */
+.screen {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: var(--panel-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 26px;
+}
+
+/* no circle/blob background now */
+
+/* subtle dark vignette only */
+.screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.01),
+    rgba(0,0,0,0.16)
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.screen > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* =========================
+   TEXT
+   ========================= */
+h1, h2 {
+  color: var(--text);
+  font-weight: 500;
+}
+
+p {
+  color: var(--text-dim);
+}
+
+h1 {
+  font-size: 26px;
+  max-width: 250px;
+}
+
+h2 {
+  font-size: 22px;
+  max-width: 250px;
+}
+
+.subtext {
+  margin-top: 8px;
+}
+
+/* =========================
+   IMAGES / GIFS / PNGS
+   ========================= */
+.main-gif {
+  width: 220px;
+  max-width: 42vw;
+  display: block;
+  margin: 0 auto 16px auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.45));
+  animation: none;
+}
+
+.main-gif::after {
+  content: "";
+  position: absolute;
+}
+
+.cat-gif {
+  width: 240px;
+}
+
+.choice-gif {
+  width: 100px;
+  height: 100px;
+
+  object-fit: contain;
+
+  display: block;
+  margin: 0 auto;
+
+  image-rendering: pixelated;
+
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,0.8));
+}
+
+@keyframes floaty {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+body, button, .choice, .pixel-btn {
+  cursor: url("assets/images/paw.png") 8 8, auto;
+}
+
+.pixel-btn {
+    margin-top: 24px;
+
+    padding: 12px 22px;
+
+    background: transparent;
+    color: var(--accent);
+
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+
+.pixel-btn:hover {
+  background: var(--accent);
+  color: black;
+}
+
+/* =========================
+   SPEECH BUBBLE
+   ========================= */
+.speech-bubble {
+  background: rgba(242, 232, 221, 0.95);
+  color: #3a302d;
+  border: 1px solid #b89e8f;
+  border-radius: 14px;
+  padding: 10px 18px;
+  font-size: 15px;
+  margin-top: 4px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.speech-bubble.top {
+  margin-bottom: 12px;
+}
+
+/* =========================
+   PICK SCREEN
+   ========================= */
+.pick-label {
+  margin-top: 8px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: var(--accent-light);
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.choice {
+  width: 130px;
+  height: 170px;
+
+  padding: 14px;
+
+  background: var(--panel-soft);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  transition: all 0.2s ease;
+}
+
+.choice:hover {
+  transform: translateY(-6px) scale(1.03);
+
+  border-color: var(--accent);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.8),
+    0 0 10px rgba(212,163,115,0.2);
+}
+
+.choice span {
+  font-size: 13px;
+  color: var(--soft-cream);
+  text-align: center;
+}
+
+/* =========================
+   ENDING SCREEN
+   ========================= */
+#ending-title {
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+
+#ending-text {
+  max-width: 260px;
+}
+
+.ending-buttons {
+  margin-top: 18px;
+}
+
+#ending-gif {
+  width: 260px;
+  max-width: 78vw;
+}
+
+#ending-gif.strawberry-big {
+  width: 380px;
+  max-width: 92vw;
+}
+
+/* Floating decorative stickers */
+#floating-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.float-item {
+  position: absolute;
+  width: 34px;
+  opacity: 0;
+  animation: rise 3.4s linear forwards;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(24px) scale(0.9) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-260px) scale(1.15) rotate(12deg);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   FADE TRANSITIONS
+   ========================= */
+.fade-in {
+  animation: fadeIn 0.45s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
