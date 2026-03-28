@@ -138,7 +138,7 @@ function showEnding(choice) {
     endingGif.classList.add("strawberry-big");
     endingTitle.textContent = "Sweet Strawberry";
     endingText.textContent =
-      "Soft, Sweet, Adorable choice. Birthday energy embued with sparkles and warmth.";
+      "Soft, Sweet, Adorable choice. Birthday energy embued with sparkles and warmth. Happy 24th Birthday😊";
 
     startFloating([
       ASSETS.strawberry
