@@ -42,11 +42,11 @@ body {
 #app {
   width: min(95vw, 520px);
   height: min(92vh, 760px);
+  max-height: 92vh;
 
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 18px;
-
   box-shadow: 0 30px 80px rgba(0,0,0,0.8);
 
   overflow: hidden;
@@ -96,7 +96,8 @@ body {
 .screen {
   flex: 1;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: var(--panel-soft);
   display: flex;
   flex-direction: column;
@@ -104,6 +105,7 @@ body {
   justify-content: center;
   text-align: center;
   padding: 26px;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* no circle/blob background now */
@@ -319,16 +321,23 @@ body, button, .choice, .pixel-btn {
 
 .ending-buttons {
   margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 #ending-gif {
-  width: 260px;
-  max-width: 78vw;
+  width: min(260px, 72vw);
+  max-width: 100%;
+  height: auto;
 }
 
 #ending-gif.strawberry-big {
-  width: 380px;
-  max-width: 92vw;
+  width: min(420px, 88vw);
+  max-width: 100%;
+  height: auto;
 }
 
 /* Floating decorative stickers */
